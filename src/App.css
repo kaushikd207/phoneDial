@@ -113,7 +113,9 @@ html {
   flex-direction: column;
   align-items: center;
 }
-
+.view-number {
+  padding: 25px;
+}
 .calling-text {
   font-size: 32px;
   margin-bottom: 20px;

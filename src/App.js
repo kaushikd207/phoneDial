@@ -65,6 +65,7 @@ function App() {
       ) : (
         <div className="calling-screen">
           <h1 className="calling-text">Calling...</h1>
+          <div className="view-number">{input}</div>
           <button className="cancel-button" onClick={handleCancel}>
             Cancel
           </button>
