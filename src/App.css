@@ -1,38 +1,164 @@
-.App {
+/* General Styling */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* App Container */
+.app {
   text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Dial Pad and Calling Screen */
+.dial-pad,
+.calling-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Input Box and Actions Container */
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-box {
+  width: 100%;
+  padding: 15px;
+  font-size: 24px;
+  border: 2px solid #ddd;
+  border-radius: 10px 0 0 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Actions Next to Input Box */
+.actions {
+  display: flex;
+}
+
+.backspace-button,
+.dial-button {
+  padding: 15px 20px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.backspace-button {
+  background-color: #f44336;
   color: white;
+  border-radius: 0 10px 10px 0;
+  margin-right: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.dial-button {
+  background-color: #2196f3;
+  color: white;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dial-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.backspace-button:active,
+.dial-button:active {
+  background-color: #1565c0;
+}
+
+/* Keypad Buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.keyBtn {
+  padding: 20px;
+  font-size: 24px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.keyBtn:active {
+  background-color: #388e3c;
+}
+
+/* Calling Screen */
+.calling-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calling-text {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2196f3;
+}
+
+.cancel-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:active {
+  background-color: #d32f2f;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .input-box {
+    font-size: 20px;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .keyBtn {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .backspace-button,
+  .dial-button,
+  .cancel-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .calling-text {
+    font-size: 28px;
   }
 }
